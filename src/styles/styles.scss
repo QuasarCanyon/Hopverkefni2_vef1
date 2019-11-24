@@ -1,4 +1,5 @@
 @import "config";
+@import "lectures";
 
 * {
   padding: 0;
@@ -11,7 +12,8 @@
   box-sizing: inherit;
 }
 
-html { /* stylelint-disable-line */
+html {
+  /* stylelint-disable-line */
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll; // alltaf hafa y skrollbar
@@ -20,7 +22,8 @@ html { /* stylelint-disable-line */
   font-size: 16px;
 }
 
-img { /* stylelint-disable-line */
+img {
+  /* stylelint-disable-line */
   max-width: 100%;
 }
 
