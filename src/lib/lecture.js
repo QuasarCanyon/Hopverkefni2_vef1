@@ -3,11 +3,12 @@ import {
 } from './helpers';
 
 export default class Lecture {
-  constructor() {
+  constructor(a) {
     this.container = document.querySelector('.lecture-page');
+    const lectureNum = a;
   }
 }
 
 fetchJSONFile('../../lectures.json', (data) => {
-  
+
 });
