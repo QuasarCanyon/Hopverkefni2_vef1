@@ -1,5 +1,5 @@
 import {
-  empty
+  empty, el,
 } from './helpers';
 
 export default class List {
@@ -8,13 +8,13 @@ export default class List {
   }
 }
 
-//  Búa til listi fyrir fyrirlestrarnir
+//  Búa til lista fyrir fyrirlestrana
 export function fetchJSONFile(path, callback) {
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = function () {
+  const httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function request() {
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
-        var data = JSON.parse(httpRequest.responseText);
+        const data = JSON.parse(httpRequest.responseText);
         if (callback) callback(data);
       }
     }
@@ -23,9 +23,8 @@ export function fetchJSONFile(path, callback) {
   httpRequest.send();
 }
 
-// this requests the file and executes a callback with the parsed result once
-//   it is available
-fetchJSONFile('../../lectures.json', function (data) {
+// this requests the file and executes a callback with the parsed result once it is available
+fetchJSONFile('../../lectures.json', (data) => {
   // do something with your data
   console.log(data);
 });
