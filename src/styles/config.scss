@@ -8,7 +8,7 @@ monospace;
 $black: #000;
 $dark-gray: #999;
 $gray: #aaa;
-$ligt-gray: #ccc;
+$light-gray: #ccc;
 $bright-green: #2d2;
 $green: #1a1;
 $yellow: #fcffd2;
@@ -22,4 +22,12 @@ $pink: #cc9694;
 @mixin flexcolumn {
   display: flex;
   flex-direction: column;
+}
+
+@mixin columns($col: 1) {
+  // margföldum með "1%" til að breyta gildi í prósentu gildi
+  width: ($col / 12 * 100) * 1%;
+
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
 }

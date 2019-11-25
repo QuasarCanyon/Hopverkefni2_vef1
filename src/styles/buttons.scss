@@ -1,0 +1,40 @@
+@import "config.scss";
+
+.buttons {
+    @include flexrow;
+  
+    margin: 0 auto $gutter*2 auto;
+    max-width: $max-width/2.5;
+
+    justify-content: space-between;
+    font-family: $font;
+    font-size: 1.5rem;
+  
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+
+    @media (max-width: $max-width) {
+        padding-right: $gutter;    
+        padding-left: $gutter;
+    }
+  
+    &__HTML,
+    &__CSS,
+    &__JS {
+      border: 1px solid $gray;
+      border-radius: 15px;
+      padding: $gutter/2;
+      background-color: $light-gray;
+      transition: background-color 300ms ease-in-out;
+
+      font-family: $font-heading;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+
