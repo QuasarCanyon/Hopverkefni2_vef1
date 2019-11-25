@@ -15,9 +15,31 @@
   &__item {
     @include columns(12);
     padding-bottom: $gutter;
+
+
+    @include flexcolumn;
+
+    background-clip: content-box;
+    background-color: $light-gray;
+    transition: background-color 300ms ease-in-out;
+
+    &:hover {
+      background-color: $gray;
+    }
    
     @media (min-width: 500px + 1) {
       @include columns(4);
+    }
+
+    font-family: $font-heading;
+    font-weight: bold;
+
+    &--category {
+      text-transform: uppercase;
+    }
+
+    &--title {
+      font-size: 2em;
     }
   }
 
