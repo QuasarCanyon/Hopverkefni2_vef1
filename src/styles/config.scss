@@ -1,6 +1,25 @@
 $max-width: 1200px;
 $gutter: 20px;
+$font: 'Lora',
+serif;
+$font-heading: 'Roboto Mono',
+monospace;
 
-div {}
+$black: #000;
+$dark-gray: #999;
+$gray: #aaa;
+$ligt-gray: #ccc;
+$bright-green: #2d2;
+$green: #1a1;
+$yellow: #fcffd2;
+$pink: #cc9694;
 
-;
+@mixin flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexcolumn {
+  display: flex;
+  flex-direction: column;
+}

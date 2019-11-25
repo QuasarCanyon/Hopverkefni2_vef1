@@ -1,5 +1,7 @@
 import {
-  empty, el, fetchJSONFile,
+  empty,
+  el,
+  fetchJSONFile,
 } from './helpers';
 
 export default class Lecture {

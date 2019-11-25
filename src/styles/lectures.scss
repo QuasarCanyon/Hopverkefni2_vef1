@@ -1,8 +1,9 @@
-.lectures__row {
-  display: flex;
-  flex-direction: column;
-}
+@import "config.scss";
 
-.lectures__col {
-  width: 100%;
+.list {
+  @include flexcolumn;
+
+  &__item {
+    width: 100%;
+  }
 }

@@ -1,5 +1,4 @@
 @import "config";
-@import "lectures";
 
 * {
   padding: 0;
@@ -18,8 +17,12 @@ html {
   overflow-x: hidden;
   overflow-y: scroll; // alltaf hafa y skrollbar
 
-  font-family: $font-main;
+  font-family: $font;
   font-size: 16px;
+}
+
+main {
+  margin: 0 auto;
 }
 
 img {
@@ -28,3 +31,6 @@ img {
 }
 
 // TODO import
+@import "lectures";
+@import "index";
+@import "lecture";
