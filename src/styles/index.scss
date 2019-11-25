@@ -1,0 +1,39 @@
+@import "config.scss";
+
+.header {
+  @include flexcolumn;
+  text-align: center;
+  background-image: url(../../img/header.jpg);
+
+
+  &__course--title {
+    font-family: $font;
+    font-size: 16px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 3rem;
+  }
+}
+
+.buttons {
+  @include flexrow;
+
+  justify-content: space-between;
+  justify-items: stretch;
+  font-family: $font;
+  font-size: 1.5rem;
+
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+
+  &__HTML,
+  &__CSS,
+  &__JS {
+    border: 1px solid $gray;
+    border-radius: 15px;
+    padding: $gutter/2;
+    background-color: $gray;
+  }
+}
