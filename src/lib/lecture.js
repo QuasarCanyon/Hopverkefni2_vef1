@@ -11,7 +11,7 @@ export default class Lecture {
 }
 
 fetchJSONFile('../../lectures.json', (data) => {
-  const pageLecture = document.querySelector('.lecture-page');
+  const pageLecture = document.querySelector('.lecture');
   const lectureNum = 0;
   const lectureData = data.lectures[lectureNum].content;
   for (let i = 0; i < lectureData.length; i++) {
@@ -41,9 +41,9 @@ fetchJSONFile('../../lectures.json', (data) => {
       const quoteEl = el('p', quote);
       const attributeEl = el('p', attribute);
       quoteEl.setAttribute('class', 'lecture__quote');
-      attributeEl.setAttribute('class', 'lecture__quote-attribute');
+      attributeEl.setAttribute('class', 'lecture__quote--attribute');
       const quoteDiv = el('div', quoteEl, attributeEl);
-      quoteDiv.setAttribute('class', 'lecture__quote-spot');
+      quoteDiv.setAttribute('class', 'lecture__quote--spot');
     } else if (type === 'video') {
       const sourceEl = el('source');
       sourceEl.setAttribute('src', jData);
@@ -54,7 +54,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       videoEl.setAttribute('controls');
       videoEl.setAttribute('class', 'lecture__video');
       const videoDiv = el('div', videoEl);
-      videoDiv.setAttribute('class', 'lecture__video-spot');
+      videoDiv.setAttribute('class', 'lecture__video--spot');
     } else if (type === 'image') {
       const image = el('img');
       const {caption} = lectureData[i];
@@ -62,9 +62,9 @@ fetchJSONFile('../../lectures.json', (data) => {
       image.setAttribute('class', 'lecture__image');
       image.setAttribute('alt', caption);
       const imageCaption = el('figcaption', document.createTextNode(caption));
-      imageCaption.setAttribute('class', 'lecture__image-caption');
+      imageCaption.setAttribute('class', 'lecture__image--caption');
       const imageEl = el('figure', image, imageCaption);
-      imageEl.setAttribute('class', 'lecture__image-spot');
+      imageEl.setAttribute('class', 'lecture__image--spot');
     } else if (type === 'list') {
       const ulEl = el('ul');
       ulEl.setAttribute('class', 'lecture__list');
@@ -75,4 +75,8 @@ fetchJSONFile('../../lectures.json', (data) => {
       }
     }
   }
+  const headerCategory = document.querySelector('.header__category');
+  headerCategory.appendChild(document.createTextNode(data.lectures[lectureNum].category));
+  const headerTitle = document.querySelector('.header__title');
+  headerTitle.appendChild(document.createTextNode(data.lectures[lectureNum].title));
 });
