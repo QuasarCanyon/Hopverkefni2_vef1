@@ -10,6 +10,7 @@ export default class Lecture {
   }
 }
 
+// This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
 fetchJSONFile('../../lectures.json', (data) => {
   const pageLecture = document.querySelector('.lecture');
   const lectureNum = window.localStorage.getItem('next');

@@ -28,6 +28,6 @@ fetchJSONFile('../../lectures.json', (data) => {
     gridItem.addEventListener('click', () => {
       window.localStorage.setItem('next', i);
       window.location.replace('../fyrirlestur.html');
-    })
+    });
   }
 });
