@@ -5,10 +5,9 @@
   text-align: center;
   justify-content: center;
   background-image: url(../../img/header.jpg);
-  min-height: 25vh;
+  min-height: 40vh;
   background-size: cover;
   filter: opacity(.6);
-
 
   &__course--title {
     font-family: $font-heading;
@@ -19,4 +18,8 @@
     font-family: $font-heading;
     font-size: 3rem;
   }
+}
+
+main {
+  max-width: $max-width;
 }
