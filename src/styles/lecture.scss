@@ -1,0 +1,33 @@
+@import "config.scss";
+
+//fyrir sérhvert fyrirlestri 
+
+.lecture {
+
+  &__header {
+    @include flexcolumn;
+    text-align: center;
+    justify-content: center;
+    background-image: url(../../img/code.jpg);
+    min-height: 40vh;
+    background-size: cover;
+    filter: opacity(.6);
+    margin: 0 auto $gutter*2 auto;
+  }
+
+  &__category {
+    font-family: $font;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 3rem;
+  }
+}
+
+&__content {
+  font-family: $font;
+  font-size: 1rem;
+}
