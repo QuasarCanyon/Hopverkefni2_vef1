@@ -25,8 +25,8 @@ fetchJSONFile('../../lectures.json', (data) => {
     const gridItem = el('div', gridThumbnail, gridCategory, gridTitle);
     gridItem.setAttribute('class', 'list__item');
     pageList.appendChild(gridItem);
-    gridItem.addEventListener('click', => {
-      window.setLocalStorage('next', i);
+    gridItem.addEventListener('click', () => {
+      window.localStorage.setItem('next', i);
       window.location.replace('../fyrirlestur.html');
     })
   }
