@@ -12,7 +12,7 @@ export default class Lecture {
 
 fetchJSONFile('../../lectures.json', (data) => {
   const pageLecture = document.querySelector('.lecture');
-  const lectureNum = 0;
+  const lectureNum = window.localStorage.getItem('next');
   const lectureData = data.lectures[lectureNum].content;
   for (let i = 0; i < lectureData.length; i++) {
     const {type} = lectureData[i];
