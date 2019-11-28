@@ -25,9 +25,35 @@
     font-family: $font-heading;
     font-size: 3rem;
   }
-}
 
-&__content {
-  font-family: $font;
-  font-size: 1rem;
+  &__content {
+    @include flexcolumn;
+    max-width: $max-width;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @media (min-width: 1200px) {
+      width: 69%;
+      margin: $gutter auto;
+    }
+  }
+
+  &__text {
+    font-family: $font;
+    font-size: 1rem;
+    padding-top: $gutter/2;
+    padding-bottom: $gutter/2;
+    line-height: 2;
+  }
+
+  &__quote--spot {
+    background-color: $dark-gray;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: 2rem;
+  }
 }
