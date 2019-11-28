@@ -32,6 +32,10 @@
 
     &--active {
       background-color: $bright-green;
+
+      &:hover {
+        background-color: $green;
+      }
     }
   }
 }
