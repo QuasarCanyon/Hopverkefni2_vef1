@@ -8,6 +8,22 @@ export default class List {
   }
 }
 
+const htmlButton = document.querySelector('.buttons__HTML');
+const cssButton = document.querySelector('.buttons__CSS');
+const jsButton = document.querySelector('.buttons__JS');
+
+htmlButton.addEventListener('click', () => {
+  htmlButton.classList.toggle('buttons__HTML--active');
+});
+
+cssButton.addEventListener('click', () => {
+  cssButton.classList.toggle('buttons__CSS--active');
+});
+
+jsButton.addEventListener('click', () => {
+  jsButton.classList.toggle('buttons__JS--active');
+});
+
 // This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
 fetchJSONFile('../../lectures.json', (data) => {
   const pageList = document.querySelector('.list');
