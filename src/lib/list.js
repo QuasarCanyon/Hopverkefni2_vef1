@@ -15,21 +15,7 @@ export default class List {
   }
 }
 /* Aðeins að setja sem comment á meðan verið að vinna í fyrirlestrunum
-const htmlButton = document.querySelector('.buttons__HTML');
-const cssButton = document.querySelector('.buttons__CSS');
-const jsButton = document.querySelector('.buttons__JS');
 
-htmlButton.addEventListener('click', () => {
-  htmlButton.classList.toggle('buttons__HTML--active');
-});
-
-cssButton.addEventListener('click', () => {
-  cssButton.classList.toggle('buttons__CSS--active');
-});
-
-jsButton.addEventListener('click', () => {
-  jsButton.classList.toggle('buttons__JS--active');
-});
 */
 
 // This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
@@ -52,7 +38,12 @@ fetchJSONFile('../../lectures.json', (data) => {
     gridCategory.setAttribute('class', 'list__item--category');
     const gridTitle = el('p', title);
     gridTitle.setAttribute('class', 'list__item--title');
-    const gridItem = el('div', gridThumbnail, gridCategory, gridTitle);
+    let gridTick = el('span');
+    gridTick.setAttribute('class', 'list__item--tick')
+    if (window.localStorage.getItem(i) === 'yes') {
+      gridTick.appendChild(document.createTextNode('&#10004'));
+    }
+    const gridItem = el('div', gridThumbnail, gridCategory, gridTitle, gridTick);
     gridItem.setAttribute('class', 'list__item');
     pageList.appendChild(gridItem);
     gridItem.addEventListener('click', () => {
@@ -60,4 +51,20 @@ fetchJSONFile('../../lectures.json', (data) => {
       window.location.replace('../fyrirlestur.html');
     });
   }
+
+  const htmlButton = document.querySelector('.buttons__HTML');
+  const cssButton = document.querySelector('.buttons__CSS');
+  const jsButton = document.querySelector('.buttons__JS');
+
+  htmlButton.addEventListener('click', () => {
+    htmlButton.classList.toggle('buttons__HTML--active');
+  });
+
+  cssButton.addEventListener('click', () => {
+    cssButton.classList.toggle('buttons__CSS--active');
+  });
+
+  jsButton.addEventListener('click', () => {
+    jsButton.classList.toggle('buttons__JS--active');
+  });
 });
