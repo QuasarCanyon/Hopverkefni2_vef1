@@ -9,7 +9,7 @@ export default class List {
     this.container = document.querySelector('.list');
   }
 }
-/*
+/* Aðeins að setja sem comment á meðan verið að vinna í fyrirlestrunum
 const htmlButton = document.querySelector('.buttons__HTML');
 const cssButton = document.querySelector('.buttons__CSS');
 const jsButton = document.querySelector('.buttons__JS');
