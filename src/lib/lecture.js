@@ -40,6 +40,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       codeEl.appendChild(code);
       const codeP = el('p', codeEl);
       codeP.setAttribute('class', 'lecture__code');
+      pageLecture.appendChild(codeP);
     } else if (type === 'quote') {
       const quote = document.createTextNode(jData);
       const attribute = document.createTextNode(lectureData[i].attribute);
@@ -49,6 +50,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       attributeEl.setAttribute('class', 'lecture__quote--attribute');
       const quoteDiv = el('div', quoteEl, attributeEl);
       quoteDiv.setAttribute('class', 'lecture__quote--spot');
+      pageLecture.appendChild(quoteDiv);
     } else if (type === 'video') {
       const sourceEl = el('source');
       sourceEl.setAttribute('src', jData);
@@ -60,6 +62,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       videoEl.setAttribute('class', 'lecture__video');
       const videoDiv = el('div', videoEl);
       videoDiv.setAttribute('class', 'lecture__video--spot');
+      pageLecture.appendChild(videoDiv);
     } else if (type === 'image') {
       const image = el('img');
       const { caption } = lectureData[i];
@@ -70,6 +73,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       imageCaption.setAttribute('class', 'lecture__image--caption');
       const imageEl = el('figure', image, imageCaption);
       imageEl.setAttribute('class', 'lecture__image--spot');
+      pageLecture.appendChild(imageEl);
     } else if (type === 'list') {
       const ulEl = el('ul');
       ulEl.setAttribute('class', 'lecture__list');
@@ -78,6 +82,7 @@ fetchJSONFile('../../lectures.json', (data) => {
         listEl.appendChild(document.createTextNode(jData[j]));
         ulEl.appendChild(listEl);
       }
+      pageLecture.appendChild(ulEl);
     }
   }
   const headerCategory = document.querySelector('.header__category');
