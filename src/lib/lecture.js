@@ -10,13 +10,17 @@ export default class Lecture {
   }
 }
 
-// This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
+/*  This function requests the JSON file and executes a callback 
+to list its contents on the homepage with the parsed result 
+once it is available. */
 fetchJSONFile('../../lectures.json', (data) => {
   const pageLecture = document.querySelector('.lecture');
   const lectureNum = window.localStorage.getItem('next');
   const lectureData = data.lectures[lectureNum].content;
   for (let i = 0; i < lectureData.length; i++) {
-    const {type} = lectureData[i];
+    const {
+      type
+    } = lectureData[i];
     const jData = lectureData[i].data;
     if (type === 'heading') {
       const heading = document.createTextNode(jData);
@@ -58,7 +62,9 @@ fetchJSONFile('../../lectures.json', (data) => {
       videoDiv.setAttribute('class', 'lecture__video--spot');
     } else if (type === 'image') {
       const image = el('img');
-      const {caption} = lectureData[i];
+      const {
+        caption
+      } = lectureData[i];
       image.setAttribute('src', jData);
       image.setAttribute('class', 'lecture__image');
       image.setAttribute('alt', caption);
@@ -80,4 +86,8 @@ fetchJSONFile('../../lectures.json', (data) => {
   headerCategory.appendChild(document.createTextNode(data.lectures[lectureNum].category));
   const headerTitle = document.querySelector('.header__title');
   headerTitle.appendChild(document.createTextNode(data.lectures[lectureNum].title));
+
+  // mynd á hverju fyrirlestri fyrir background myndina
+  const headerImage = document.querySelector('.header__img');
+  headerImage.setAttribute('src', (data.lectures[lectureNum].image));
 });

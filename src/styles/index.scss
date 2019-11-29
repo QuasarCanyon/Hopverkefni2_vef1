@@ -18,6 +18,15 @@
     font-family: $font-heading;
     font-size: 3rem;
   }
+
+  // Mynd fyrir header á fyrirlestrunum 
+  &__img {
+    position: absolute;
+    z-index: -1;
+    min-width: 100%;
+    height: 40vh;
+    filter: opacity(.6);
+  }
 }
 
 main {

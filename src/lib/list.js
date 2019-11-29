@@ -1,5 +1,7 @@
 import {
-  empty, el, fetchJSONFile,
+  empty,
+  el,
+  fetchJSONFile,
 } from './helpers';
 
 export default class List {
@@ -7,7 +9,7 @@ export default class List {
     this.container = document.querySelector('.list');
   }
 }
-
+/*
 const htmlButton = document.querySelector('.buttons__HTML');
 const cssButton = document.querySelector('.buttons__CSS');
 const jsButton = document.querySelector('.buttons__JS');
@@ -23,14 +25,21 @@ cssButton.addEventListener('click', () => {
 jsButton.addEventListener('click', () => {
   jsButton.classList.toggle('buttons__JS--active');
 });
+*/
 
 // This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
 fetchJSONFile('../../lectures.json', (data) => {
   const pageList = document.querySelector('.list');
   for (let i = 0; i < data.lectures.length; i++) {
-    const {thumbnail} = data.lectures[i];
-    const {category} = data.lectures[i];
-    const {title} = data.lectures[i];
+    const {
+      thumbnail
+    } = data.lectures[i];
+    const {
+      category
+    } = data.lectures[i];
+    const {
+      title
+    } = data.lectures[i];
     const gridThumbnail = el('img');
     gridThumbnail.setAttribute('src', thumbnail);
     gridThumbnail.setAttribute('class', 'list__item--thumbnail');
