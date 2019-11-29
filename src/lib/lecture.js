@@ -93,4 +93,23 @@ fetchJSONFile('../../lectures.json', (data) => {
   // mynd á hverju fyrirlestri fyrir background myndina
   const headerImage = document.querySelector('.header__img');
   headerImage.setAttribute('src', (data.lectures[lectureNum].image));
+
+  const bottom = el('div');
+  bottom.setAttribute('class', 'bottom');
+  const finishLine = el('p');
+  let finLine;
+  if (window.localStorage.getItem(lectureNum) === 'no') {
+    finLine = 'Klára fyrirlestur';
+    finishLine.setAttribute('class', 'bottom__link bottom__link--to-finish');
+  } else if (window.localStorage.getItem(lectureNum) === 'yes') {
+    finLine = 'Fyrirlestur kláraður';
+    finishLine.setAttribute('class', 'bottom__link bottom__link--finished');
+  }
+  finishLine.appendChild(document.createTextNode(finLine))
+  const backLine = el('p');
+  backLine.setAttribute('class', 'bottom__link bottom__link--back');
+  backLine.appendChild(document.createTextNode('Til baka'));
+  bottom.appendChild(finishLine);
+  bottom.appendChild(backLine);
+  pageLecture.appendChild(bottom);
 });

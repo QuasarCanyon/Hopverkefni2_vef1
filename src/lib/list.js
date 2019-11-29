@@ -7,6 +7,11 @@ import {
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
+    for (let i = 0; i < 13; i++) {
+      if (window.localStorage.getItem(i) !== 'no' && window.localStorage.getItem(i) !== 'yes') {
+        window.localStorage.setItem(i, 'no');
+      }
+    }
   }
 }
 /* Aðeins að setja sem comment á meðan verið að vinna í fyrirlestrunum
