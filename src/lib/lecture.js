@@ -62,9 +62,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       videoDiv.setAttribute('class', 'lecture__video--spot');
     } else if (type === 'image') {
       const image = el('img');
-      const {
-        caption
-      } = lectureData[i];
+      const { caption } = lectureData[i];
       image.setAttribute('src', jData);
       image.setAttribute('class', 'lecture__image');
       image.setAttribute('alt', caption);
