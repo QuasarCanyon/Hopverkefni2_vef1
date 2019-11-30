@@ -2,11 +2,19 @@
 
 ## Upplýsingar um keyrslu á verkefni
 
-Til að skoða síðurnar í þessu verkefni er hægt að fara inn á: eða klóna verkefnið frá GitHub á: https://github.com/QuasarCanyon/Hopverkefni2_vef1 og opna local.
+Til að skoða síðurnar í þessu verkefni er hægt að fara inn á:  https://notendur.hi.is/~ese20/vefforritun/Hopverkefni2/index.html  
+eða klóna verkefnið frá GitHub á: https://github.com/QuasarCanyon/Hopverkefni2_vef1 og opna local.
 
 ## Lýsing á verkefni
 
 Uppbygging verkefnisins er á þann hátt að aðeins eru tvær HTML skrár, og báðar innihalda aðeins beinagrindina af því sem endar á að sjást á síðunni. Útlitinu er stýrt með scss skrám sem hver um sig taka á tilteknu atriði, `buttons.scss` fyrir takka á forsíðu, `lecture.scss` fyrir útlit staks fyrirlesturs, `lectures.scss` fyrir útlit valmyndarinnar á forsíðu og svo `index.scss` og `config.scss` fyrir meira grunn config. Sass sér svo um að taka þessar skrár saman í `styles.scss` og svo yfir í `styles.css` þaðan sem útlitið er í raun lesið á móti HTML.
+
+Til að keyra verkefnið þarf að keyra eftirfarandi skipanir í terminal eða command line, í möppu verkefnisins:
+
+```bash
+> npm install 
+> npm run dev
+```
 
 ## Upplýsingar um nemendur
 
