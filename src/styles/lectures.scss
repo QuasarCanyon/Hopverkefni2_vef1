@@ -44,6 +44,10 @@
       text-transform: uppercase;
     }
 
+    &--title-tick-group {
+      display: inline-flex;
+    }
+
     &--title {
       font-size: 2em;
     }

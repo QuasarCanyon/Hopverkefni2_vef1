@@ -131,12 +131,12 @@ fetchJSONFile('../../lectures.json', (data) => {
   const toFinishLecture = pageLecture.querySelector('.bottom__link--finish');
   toFinishLecture.addEventListener('click', () => {
     window.localStorage.setItem(lectureNum, 'yes');
-    window.location.replace('../fyrirlestur.html');
+    window.location.replace(`../fyrirlestur.html?slug=${slug}`);
   });
 
   const finishedLecture = pageLecture.querySelector('.bottom__link--finished');
   finishedLecture.addEventListener('click', () => {
     window.localStorage.setItem(lectureNum, 'no');
-    window.location.replace('../fyrirlestur.html');
+    window.location.replace(`../fyrirlestur.html?slug=${slug}`);
   });
 });

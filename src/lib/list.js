@@ -50,7 +50,9 @@ function populateGrid(data) {
       if (window.localStorage.getItem(i) === 'yes') {
         gridTick.appendChild(document.createTextNode('✓'));
       }
-      const gridItem = el('div', gridThumbnail, gridCategory, gridTitle, gridTick);
+      const gridDiv = el('div', gridTitle, gridTick);
+      gridDiv.setAttribute('class', 'list__item--title-tick-group');
+      const gridItem = el('div', gridThumbnail, gridCategory, gridDiv);
       gridItem.setAttribute('class', 'list__item');
       pageList.appendChild(gridItem);
       gridItem.addEventListener('click', () => {
