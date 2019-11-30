@@ -51,6 +51,10 @@
     padding-right: 0;
   }
 
+  &__quote--attribute {
+    font-style: italic;
+  }
+
   &__image--spot {
     padding-bottom: $gutter;
   }
