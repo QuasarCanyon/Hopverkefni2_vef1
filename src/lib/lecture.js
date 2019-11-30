@@ -34,12 +34,16 @@ fetchJSONFile('../../lectures.json', (data) => {
       headingEl.setAttribute('class', 'lecture__heading');
       pageLecture.appendChild(headingEl);
     } else if (type === 'text') {
-      const textStr = jData.split('\n').join(' <br> ');
-      const text = document.createTextNode(textStr);
-      const textEl = el('p');
-      textEl.appendChild(text);
-      const textDiv = el('div', textEl);
+      const textObj = jData.split('\n');
+      const textElObj = {};
+      for (let j = 0; j < textObj.length; j += 1) {
+        textElObj[j] = el('p', textObj[j]);
+      }
+      const textDiv = el('div');
       textDiv.setAttribute('class', 'lecture__text');
+      for (let j = 0; j < textObj.length; j += 1) {
+        textDiv.appendChild(textElObj[j]);
+      }
       pageLecture.appendChild(textDiv);
     } else if (type === 'code') {
       const code = document.createTextNode(jData);
