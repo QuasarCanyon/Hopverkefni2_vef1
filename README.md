@@ -1,5 +1,26 @@
 # Hópverkefni 2
 
+## Upplýsingar um keyrslu á verkefni
+
+Til að skoða síðurnar í þessu verkefni er hægt að fara inn á: eða klóna verkefnið frá GitHub á: https://github.com/QuasarCanyon/Hopverkefni2_vef1 og opna local.
+
+## Lýsing á verkefni
+
+Uppbygging verkefnisins er á þann hátt að aðeins eru tvær HTML skrár, og báðar innihalda aðeins beinagrindina af því sem endar á að sjást á síðunni. Útlitinu er stýrt með scss skrám sem hver um sig taka á tilteknu atriði, `buttons.scss` fyrir takka á forsíðu, `lecture.scss` fyrir útlit staks fyrirlesturs, `lectures.scss` fyrir útlit valmyndarinnar á forsíðu og svo `index.scss` og `config.scss` fyrir meira grunn config. Sass sér svo um að taka þessar skrár saman í `styles.scss` og svo yfir í `styles.css` þaðan sem útlitið er í raun lesið á móti HTML.
+
+## Upplýsingar um nemendur
+
+* Eydís Silvía Einarsdóttir
+  - Netfang: `ese20@hi.is`
+* Flóra Vuong Nu Dong
+  - Netfang: `vnt1@hi.is`
+* Jón Hafsteinn Guðmundsson
+  - Netfang: `jhg14@hi.is`
+
+## Verkefnislýsing frá kennara fylgir hér fyrir neðan:
+
+# Hópverkefni 2
+
 Verkefnið felst í því að smíða prótótýpu af fyrirlestravef fyrir vefforritun. Gefin eru gögn sem unnin eru uppúr námsefni vetrarins.
 
 Gefnar eru [fyrirmyndir](utlit/) í `500px` og `1500px` án grindar ásamt `1500px` með grind. Allt efni skal skalast snyrtilega á milli.
