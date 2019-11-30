@@ -15,7 +15,14 @@ to list its contents on the homepage with the parsed result
 once it is available. */
 fetchJSONFile('../../lectures.json', (data) => {
   const pageLecture = document.querySelector('.lecture');
-  const lectureNum = window.localStorage.getItem('next');
+  const url = window.location.search;
+  const slug = url.substring(6);
+  let lectureNum = 0;
+  for (let i = 0; i < data.lectures.length; i++) {
+    if (slug === data.lectures[i].slug) {
+      lectureNum = i;
+    }
+  }
   const lectureData = data.lectures[lectureNum].content;
   for (let i = 0; i < lectureData.length; i++) {
     const {
@@ -28,7 +35,8 @@ fetchJSONFile('../../lectures.json', (data) => {
       headingEl.setAttribute('class', 'lecture__heading');
       pageLecture.appendChild(headingEl);
     } else if (type === 'text') {
-      const text = document.createTextNode(jData);
+      const textStr = jData.split('\n').join(' <br> ');
+      const text = document.createTextNode(textStr);
       const textEl = el('p');
       textEl.appendChild(text);
       const textDiv = el('div', textEl);

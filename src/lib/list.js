@@ -49,7 +49,9 @@ function populateGrid(data) {
       pageList.appendChild(gridItem);
       gridItem.addEventListener('click', () => {
         window.localStorage.setItem('next', i);
-        window.location.replace('../fyrirlestur.html');
+        const {slug} = data.lectures[i];
+        const newAddr = `../fyrirlestur.html?slug=${slug}`;
+        window.location.replace(newAddr);
       });
     }
   }
