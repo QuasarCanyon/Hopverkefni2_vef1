@@ -18,7 +18,7 @@ Til að keyra verkefnið þarf að keyra eftirfarandi skipanir í terminal eða 
 
 ## Upplýsingar um nemendur
 
-* Eydís Silvía Einarsdóttir
+* Eydís Sylvía Einarsdóttir
   - Netfang: `ese20@hi.is`
 * Flóra Vuong Nu Dong
   - Netfang: `vnt1@hi.is`
