@@ -51,16 +51,11 @@ fetchJSONFile('../../lectures.json', (data) => {
       const quoteDiv = el('div', quoteEl, attributeEl);
       quoteDiv.setAttribute('class', 'lecture__quote--spot');
       pageLecture.appendChild(quoteDiv);
-    } else if (type === 'video') {
-      const sourceEl = el('source');
-      sourceEl.setAttribute('src', jData);
-      sourceEl.setAttribute('type', 'video/mp4');
-      const videoEl = el('video', sourceEl);
-      videoEl.setAttribute('width', '"320"');
-      videoEl.setAttribute('height', '"240"');
-      videoEl.setAttribute('controls');
-      videoEl.setAttribute('class', 'lecture__video');
-      const videoDiv = el('div', videoEl);
+    } else if (type === 'youtube') {
+      const iframeEl = el('iframe');
+      iframeEl.setAttribute('class', 'lecture__video');
+      iframeEl.setAttribute('src', jData);
+      const videoDiv = el('div', iframeEl);
       videoDiv.setAttribute('class', 'lecture__video--spot');
       pageLecture.appendChild(videoDiv);
     } else if (type === 'image') {
@@ -102,7 +97,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     finLine = 'Klára fyrirlestur';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finish');
   } else if (window.localStorage.getItem(lectureNum) === 'yes') {
-    finLine = 'Fyrirlestur kláraður ✓';
+    finLine = '✓ Fyrirlestur kláraður';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finished');
   }
   finishLine.appendChild(document.createTextNode(finLine))
