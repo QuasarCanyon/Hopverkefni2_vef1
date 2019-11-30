@@ -1,5 +1,4 @@
 import {
-  empty,
   el,
   fetchJSONFile,
 } from './helpers';
@@ -10,23 +9,23 @@ export default class Lecture {
   }
 }
 
-/*  This function requests the JSON file and executes a callback 
-to list its contents on the homepage with the parsed result 
+/*  This function requests the JSON file and executes a callback
+to list its contents on the homepage with the parsed result
 once it is available. */
 fetchJSONFile('../../lectures.json', (data) => {
   const pageLecture = document.querySelector('.lecture');
   const url = window.location.search;
   const slug = url.substring(6);
   let lectureNum = 0;
-  for (let i = 0; i < data.lectures.length; i++) {
+  for (let i = 0; i < data.lectures.length; i += 1) {
     if (slug === data.lectures[i].slug) {
       lectureNum = i;
     }
   }
   const lectureData = data.lectures[lectureNum].content;
-  for (let i = 0; i < lectureData.length; i++) {
+  for (let i = 0; i < lectureData.length; i += 1) {
     const {
-      type
+      type,
     } = lectureData[i];
     const jData = lectureData[i].data;
     if (type === 'heading') {
@@ -84,7 +83,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     } else if (type === 'list') {
       const ulEl = el('ul');
       ulEl.setAttribute('class', 'lecture__list');
-      for (let j = 0; j < jData.length; j++) {
+      for (let j = 0; j < jData.length; j += 1) {
         const listEl = el('li');
         listEl.appendChild(document.createTextNode(jData[j]));
         ulEl.appendChild(listEl);

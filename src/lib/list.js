@@ -7,7 +7,7 @@ import {
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
-    for (let i = 0; i < 13; i++) {
+    for (let i = 0; i < 13; i += 1) {
       if (window.localStorage.getItem(i) !== 'no' && window.localStorage.getItem(i) !== 'yes') {
         window.localStorage.setItem(i, 'no');
       }
@@ -21,7 +21,7 @@ function populateGrid(data) {
   const htmlOn = document.querySelector('.buttons__HTML--active');
   const cssOn = document.querySelector('.buttons__CSS--active');
   const javascriptOn = document.querySelector('.buttons__JS--active');
-  for (let i = 0; i < data.lectures.length; i++) {
+  for (let i = 0; i < data.lectures.length; i += 1) {
     if ((htmlOn === cssOn && htmlOn === javascriptOn) || (htmlOn && (data.lectures[i].category === 'html')) || (cssOn && (data.lectures[i].category === 'css')) || (javascriptOn && (data.lectures[i].category === 'javascript'))) {
       const {
         thumbnail,
@@ -40,7 +40,7 @@ function populateGrid(data) {
       const gridTitle = el('p', title);
       gridTitle.setAttribute('class', 'list__item--title');
       const gridTick = el('span');
-      gridTick.setAttribute('class', 'list__item--tick')
+      gridTick.setAttribute('class', 'list__item--tick');
       if (window.localStorage.getItem(i) === 'yes') {
         gridTick.appendChild(document.createTextNode('✓'));
       }
@@ -49,7 +49,7 @@ function populateGrid(data) {
       pageList.appendChild(gridItem);
       gridItem.addEventListener('click', () => {
         window.localStorage.setItem('next', i);
-        const {slug} = data.lectures[i];
+        const { slug } = data.lectures[i];
         const newAddr = `../fyrirlestur.html?slug=${slug}`;
         window.location.replace(newAddr);
       });
@@ -57,7 +57,8 @@ function populateGrid(data) {
   }
 }
 
-// This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
+// This function requests the JSON file and executes a callback to list its
+// contents on the homepage with the parsed result once it is available.
 fetchJSONFile('../../lectures.json', (data) => {
   populateGrid(data);
 
