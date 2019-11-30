@@ -61,7 +61,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     } else if (type === 'image') {
       const image = el('img');
       const {
-        caption
+        caption,
       } = lectureData[i];
       image.setAttribute('src', jData);
       image.setAttribute('class', 'lecture__image');
