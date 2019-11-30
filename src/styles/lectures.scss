@@ -36,6 +36,10 @@
     font-family: $font-heading;
     font-weight: bold;
 
+    &--thumbnail {
+      height: 75%;
+    }
+
     &--category {
       text-transform: uppercase;
     }
