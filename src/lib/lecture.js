@@ -90,7 +90,7 @@ fetchJSONFile('../../lectures.json', (data) => {
   const headerTitle = document.querySelector('.header__title');
   headerTitle.appendChild(document.createTextNode(data.lectures[lectureNum].title));
 
-  // mynd á hverju fyrirlestri fyrir background myndina
+  // Mynd á hverjum fyrirlestri fyrir background myndina
   const headerImage = document.querySelector('.header__img');
   headerImage.setAttribute('src', (data.lectures[lectureNum].image));
 
@@ -100,9 +100,9 @@ fetchJSONFile('../../lectures.json', (data) => {
   let finLine;
   if (window.localStorage.getItem(lectureNum) === 'no') {
     finLine = 'Klára fyrirlestur';
-    finishLine.setAttribute('class', 'bottom__link bottom__link--to-finish');
+    finishLine.setAttribute('class', 'bottom__link bottom__link--finish');
   } else if (window.localStorage.getItem(lectureNum) === 'yes') {
-    finLine = 'Fyrirlestur kláraður';
+    finLine = 'Fyrirlestur kláraður &#10004';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finished');
   }
   finishLine.appendChild(document.createTextNode(finLine))
@@ -112,4 +112,21 @@ fetchJSONFile('../../lectures.json', (data) => {
   bottom.appendChild(finishLine);
   bottom.appendChild(backLine);
   pageLecture.appendChild(bottom);
+
+  const backwardsLink = pageLecture.querySelector('.bottom__link--back');
+  backwardsLink.addEventListener('click', () => {
+    window.location.replace('../index.html');
+  });
+
+  const toFinishLecture = pageLecture.querySelector('.bottom__link--finish');
+  toFinishLecture.addEventListener('click', () => {
+    window.localStorage.setItem(lectureNum, 'yes');
+    window.location.replace('../fyrirlestur.html');
+  });
+
+  const finishedLecture = pageLecture.querySelector('.bottom__link--finished');
+  finishedLecture.addEventListener('click', () => {
+    window.localStorage.setItem(lectureNum, 'no');
+    window.location.replace('../fyrirlestur.html');
+  });
 });

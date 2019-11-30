@@ -41,7 +41,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     let gridTick = el('span');
     gridTick.setAttribute('class', 'list__item--tick')
     if (window.localStorage.getItem(i) === 'yes') {
-      gridTick.appendChild(document.createTextNode('&#10004'));
+      gridTick.appendChild(document.createTextNode('&#10004;'));
     }
     const gridItem = el('div', gridThumbnail, gridCategory, gridTitle, gridTick);
     gridItem.setAttribute('class', 'list__item');
