@@ -102,7 +102,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     finLine = 'Klára fyrirlestur';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finish');
   } else if (window.localStorage.getItem(lectureNum) === 'yes') {
-    finLine = 'Fyrirlestur kláraður &#10004';
+    finLine = 'Fyrirlestur kláraður ✓';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finished');
   }
   finishLine.appendChild(document.createTextNode(finLine))

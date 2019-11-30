@@ -14,42 +14,44 @@ export default class List {
     }
   }
 }
-/* Aðeins að setja sem comment á meðan verið að vinna í fyrirlestrunum
-
-*/
 
 // This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
 fetchJSONFile('../../lectures.json', (data) => {
   const pageList = document.querySelector('.list');
+  const htmlOn = document.querySelector('.buttons__HTML--active');
+  const cssOn = document.querySelector('.buttons__CSS--active');
+  const javascriptOn = document.querySelector('.button__JS--active');
   for (let i = 0; i < data.lectures.length; i++) {
-    const {
-      thumbnail
-    } = data.lectures[i];
-    const {
-      category
-    } = data.lectures[i];
-    const {
-      title
-    } = data.lectures[i];
-    const gridThumbnail = el('img');
-    gridThumbnail.setAttribute('src', thumbnail);
-    gridThumbnail.setAttribute('class', 'list__item--thumbnail');
-    const gridCategory = el('p', category);
-    gridCategory.setAttribute('class', 'list__item--category');
-    const gridTitle = el('p', title);
-    gridTitle.setAttribute('class', 'list__item--title');
-    let gridTick = el('span');
-    gridTick.setAttribute('class', 'list__item--tick')
-    if (window.localStorage.getItem(i) === 'yes') {
-      gridTick.appendChild(document.createTextNode('&#10004;'));
+    if ((htmlOn === cssOn && htmlOn === javascriptOn) || (htmlOn && (data.lectures[i].category === 'html')) || (cssOn && (data.lectures[i].category === 'css')) || (javascriptOn && (data.lectures[i].category === 'javascript'))) {
+      const {
+        thumbnail
+      } = data.lectures[i];
+      const {
+        category
+      } = data.lectures[i];
+      const {
+        title
+      } = data.lectures[i];
+      const gridThumbnail = el('img');
+      gridThumbnail.setAttribute('src', thumbnail);
+      gridThumbnail.setAttribute('class', 'list__item--thumbnail');
+      const gridCategory = el('p', category);
+      gridCategory.setAttribute('class', 'list__item--category');
+      const gridTitle = el('p', title);
+      gridTitle.setAttribute('class', 'list__item--title');
+      const gridTick = el('span');
+      gridTick.setAttribute('class', 'list__item--tick')
+      if (window.localStorage.getItem(i) === 'yes') {
+        gridTick.appendChild(document.createTextNode('✓'));
+      }
+      const gridItem = el('div', gridThumbnail, gridCategory, gridTitle, gridTick);
+      gridItem.setAttribute('class', 'list__item');
+      pageList.appendChild(gridItem);
+      gridItem.addEventListener('click', () => {
+        window.localStorage.setItem('next', i);
+        window.location.replace('../fyrirlestur.html');
+      });
     }
-    const gridItem = el('div', gridThumbnail, gridCategory, gridTitle, gridTick);
-    gridItem.setAttribute('class', 'list__item');
-    pageList.appendChild(gridItem);
-    gridItem.addEventListener('click', () => {
-      window.localStorage.setItem('next', i);
-      window.location.replace('../fyrirlestur.html');
-    });
   }
 
   const htmlButton = document.querySelector('.buttons__HTML');
