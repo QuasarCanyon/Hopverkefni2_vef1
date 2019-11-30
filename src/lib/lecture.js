@@ -57,8 +57,6 @@ fetchJSONFile('../../lectures.json', (data) => {
       iframeEl.setAttribute('src', jData);
       iframeEl.setAttribute('frameborder', '0');
       iframeEl.setAttribute('allowfullscreen', '0');
-      iframeEl.setAttribute('width', '720');
-      iframeEl.setAttribute('height', '400');
       const videoDiv = el('div', iframeEl);
       videoDiv.setAttribute('class', 'lecture__video--spot');
       pageLecture.appendChild(videoDiv);
