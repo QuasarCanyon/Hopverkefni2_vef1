@@ -8,6 +8,7 @@ eða klóna verkefnið frá GitHub á: https://github.com/QuasarCanyon/Hopverkef
 ## Lýsing á verkefni
 
 Uppbygging verkefnisins er á þann hátt að aðeins eru tvær HTML skrár, og báðar innihalda aðeins beinagrindina af því sem endar á að sjást á síðunni. Útlitinu er stýrt með scss skrám sem hver um sig taka á tilteknu atriði, `buttons.scss` fyrir takka á forsíðu, `lecture.scss` fyrir útlit staks fyrirlesturs, `lectures.scss` fyrir útlit valmyndarinnar á forsíðu og svo `index.scss` og `config.scss` fyrir meira grunn config. Sass sér svo um að taka þessar skrár saman í `styles.scss` og svo yfir í `styles.css` þaðan sem útlitið er í raun lesið á móti HTML.
+Javascript skrárnar eru 3. Þar er `helpers.js` sem inniheldur hjálparföll sem notuð eru í hinum js skránum, `lecture.js` sem inniheldur javascripit kóða fyrir fyrirlestrasíðurnar og svo `list.js` sem inniheldur javascript kóða fyrir forsíðu.
 
 Til að keyra verkefnið þarf að keyra eftirfarandi skipanir í terminal eða command line, í möppu verkefnisins:
 
