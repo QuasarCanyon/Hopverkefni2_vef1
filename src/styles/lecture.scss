@@ -47,13 +47,33 @@
 
   &__quote--spot {
     background-color: $dark-gray;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }
+
+  &__quote--attribute {
+    font-style: italic;
+  }
+
+  &__image--spot {
+    padding-bottom: $gutter;
   }
 
   &__heading {
+    padding-top: $gutter/2;
+    padding-bottom: $gutter/2;
     font-family: $font-heading;
     font-size: 2rem;
+  }
+
+  &__list {
+    line-height: 2;
+  }
+
+  &__code {
+    padding-bottom: $gutter/2;
   }
 }
 

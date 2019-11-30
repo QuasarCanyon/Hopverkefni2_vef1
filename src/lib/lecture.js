@@ -60,7 +60,9 @@ fetchJSONFile('../../lectures.json', (data) => {
       pageLecture.appendChild(videoDiv);
     } else if (type === 'image') {
       const image = el('img');
-      const { caption } = lectureData[i];
+      const {
+        caption
+      } = lectureData[i];
       image.setAttribute('src', jData);
       image.setAttribute('class', 'lecture__image');
       image.setAttribute('alt', caption);
@@ -100,7 +102,7 @@ fetchJSONFile('../../lectures.json', (data) => {
     finLine = '✓ Fyrirlestur kláraður';
     finishLine.setAttribute('class', 'bottom__link bottom__link--finished');
   }
-  finishLine.appendChild(document.createTextNode(finLine))
+  finishLine.appendChild(document.createTextNode(finLine));
   const backLine = el('p');
   backLine.setAttribute('class', 'bottom__link bottom__link--back');
   backLine.appendChild(document.createTextNode('Til baka'));
