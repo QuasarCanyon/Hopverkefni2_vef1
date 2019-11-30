@@ -101,9 +101,18 @@ fetchJSONFile('../../lectures.json', (data) => {
   headerTitle.appendChild(document.createTextNode(data.lectures[lectureNum].title));
 
   // Mynd á hverjum fyrirlestri fyrir background myndina
-  const headerImage = document.querySelector('.header__img');
-  headerImage.setAttribute('src', (data.lectures[lectureNum].image));
-
+  let headerImage;
+  if (!data.lectures[lectureNum].image) {
+    const oldHeaderImage = document.querySelector('.header__img');
+    oldHeaderImage.remove();
+    headerImage = el('div');
+    headerImage.setAttribute('class', 'header__img--placeholder');
+    const parent = document.querySelector('.header__row');
+    parent.appendChild(headerImage);
+  } else {
+    headerImage = document.querySelector('.header__img');
+    headerImage.setAttribute('src', (data.lectures[lectureNum].image));
+  }
   const bottom = el('div');
   bottom.setAttribute('class', 'bottom');
   const finishLine = el('p');
