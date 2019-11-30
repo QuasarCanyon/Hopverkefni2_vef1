@@ -46,6 +46,17 @@ fetchJSONFile('../../lectures.json', (data) => {
       }
       pageLecture.appendChild(textDiv);
     } else if (type === 'code') {
+      const codeObj = jData.split('\n');
+      const codeElObj = {};
+      for (let j = 0; j < codeObj.length; j += 1) {
+        codeElObj[j] = el('code', codeObj[j]);
+      }
+      for (let j = 0; j < codeObj.length; j += 1) {
+        const codeP = el('p', codeElObj[j]);
+        codeP.setAttribute('class', 'lecture__code');
+        pageLecture.appendChild(codeP);
+      }
+
       const code = document.createTextNode(jData);
       const codeEl = el('code');
       codeEl.appendChild(code);
