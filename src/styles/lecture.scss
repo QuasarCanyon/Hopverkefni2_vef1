@@ -56,3 +56,14 @@
     font-size: 2rem;
   }
 }
+
+.bottom__link {
+  font-family: $font-heading;
+  cursor: pointer;
+  padding: $gutter;
+  text-align: center;
+
+  &--finished {
+    color: $green;
+  }
+}

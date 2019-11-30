@@ -43,6 +43,19 @@
     &--title {
       font-size: 2em;
     }
+
+    &--tick {
+      color: $green;
+      font-size: 2rem;
+    }
+    
+    h3 {
+      @include flexcolumn;
+    }
+
+    h3:: {
+      display: flex;
+    }
   }
 
 }
