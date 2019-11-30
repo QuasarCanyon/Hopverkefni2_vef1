@@ -20,7 +20,7 @@ function populateGrid(data) {
   empty(pageList);
   const htmlOn = document.querySelector('.buttons__HTML--active');
   const cssOn = document.querySelector('.buttons__CSS--active');
-  const javascriptOn = document.querySelector('.button__JS--active');
+  const javascriptOn = document.querySelector('.buttons__JS--active');
   for (let i = 0; i < data.lectures.length; i++) {
     if ((htmlOn === cssOn && htmlOn === javascriptOn) || (htmlOn && (data.lectures[i].category === 'html')) || (cssOn && (data.lectures[i].category === 'css')) || (javascriptOn && (data.lectures[i].category === 'javascript'))) {
       const {
