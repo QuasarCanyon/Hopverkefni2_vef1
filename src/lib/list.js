@@ -15,22 +15,22 @@ export default class List {
   }
 }
 
-// This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
-fetchJSONFile('../../lectures.json', (data) => {
+function populateGrid(data) {
   const pageList = document.querySelector('.list');
+  empty(pageList);
   const htmlOn = document.querySelector('.buttons__HTML--active');
   const cssOn = document.querySelector('.buttons__CSS--active');
   const javascriptOn = document.querySelector('.button__JS--active');
   for (let i = 0; i < data.lectures.length; i++) {
     if ((htmlOn === cssOn && htmlOn === javascriptOn) || (htmlOn && (data.lectures[i].category === 'html')) || (cssOn && (data.lectures[i].category === 'css')) || (javascriptOn && (data.lectures[i].category === 'javascript'))) {
       const {
-        thumbnail
+        thumbnail,
       } = data.lectures[i];
       const {
-        category
+        category,
       } = data.lectures[i];
       const {
-        title
+        title,
       } = data.lectures[i];
       const gridThumbnail = el('img');
       gridThumbnail.setAttribute('src', thumbnail);
@@ -53,6 +53,11 @@ fetchJSONFile('../../lectures.json', (data) => {
       });
     }
   }
+}
+
+// This function requests the JSON file and executes a callback to list its contents on the homepage with the parsed result once it is available.
+fetchJSONFile('../../lectures.json', (data) => {
+  populateGrid(data);
 
   const htmlButton = document.querySelector('.buttons__HTML');
   const cssButton = document.querySelector('.buttons__CSS');
@@ -60,13 +65,16 @@ fetchJSONFile('../../lectures.json', (data) => {
 
   htmlButton.addEventListener('click', () => {
     htmlButton.classList.toggle('buttons__HTML--active');
+    populateGrid(data);
   });
 
   cssButton.addEventListener('click', () => {
     cssButton.classList.toggle('buttons__CSS--active');
+    populateGrid(data);
   });
 
   jsButton.addEventListener('click', () => {
     jsButton.classList.toggle('buttons__JS--active');
+    populateGrid(data);
   });
 });
