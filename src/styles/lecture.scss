@@ -47,8 +47,10 @@
 
   &__quote--spot {
     background-color: $dark-gray;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
   }
 
   &__quote--attribute {
