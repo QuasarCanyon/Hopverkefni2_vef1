@@ -87,7 +87,7 @@ fetchJSONFile('../../lectures.json', (data) => {
       const {
         caption,
       } = lectureData[i];
-      image.setAttribute('src', jData);
+      image.setAttribute('src', `./${jData}`);
       image.setAttribute('class', 'lecture__image');
       image.setAttribute('alt', caption);
       const imageCaption = el('figcaption', document.createTextNode(caption));
@@ -122,7 +122,8 @@ fetchJSONFile('../../lectures.json', (data) => {
     parent.appendChild(headerImage);
   } else {
     headerImage = document.querySelector('.header__img');
-    headerImage.setAttribute('src', (data.lectures[lectureNum].image));
+    const path = (data.lectures[lectureNum].image);
+    headerImage.setAttribute('src', `./${path}`);
   }
   const bottom = el('div');
   bottom.setAttribute('class', 'bottom');

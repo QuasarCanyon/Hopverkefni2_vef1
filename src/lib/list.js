@@ -38,7 +38,7 @@ function populateGrid(data) {
         gridThumbnail.setAttribute('class', 'list__item--thumbnail');
       } else {
         gridThumbnail = el('img');
-        gridThumbnail.setAttribute('src', thumbnail);
+        gridThumbnail.setAttribute('src', `${thumbnail}`);
         gridThumbnail.setAttribute('class', 'list__item--thumbnail');
       }
       const gridCategory = el('p', category);
