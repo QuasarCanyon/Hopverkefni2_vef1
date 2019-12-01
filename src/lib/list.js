@@ -67,7 +67,7 @@ function populateGrid(data) {
 
 // This function requests the JSON file and executes a callback to list its
 // contents on the homepage with the parsed result once it is available.
-fetchJSONFile('../../lectures.json', (data) => {
+fetchJSONFile('./lectures.json', (data) => {
   populateGrid(data);
 
   const htmlButton = document.querySelector('.buttons__HTML');
