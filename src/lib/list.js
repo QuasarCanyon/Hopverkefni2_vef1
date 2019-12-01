@@ -58,7 +58,7 @@ function populateGrid(data) {
       gridItem.addEventListener('click', () => {
         window.localStorage.setItem('next', i);
         const { slug } = data.lectures[i];
-        const newAddr = `../fyrirlestur.html?slug=${slug}`;
+        const newAddr = `./fyrirlestur.html?slug=${slug}`;
         window.location.replace(newAddr);
       });
     }
